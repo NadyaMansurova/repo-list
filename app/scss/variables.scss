@@ -1,0 +1,28 @@
+$grayLight: #aaa;
+$gray: #ccc;
+$defaultPadding: 10px;
+$defaultBorder:  solid 1px $gray;
+
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  -ms-border-radius: $radius;
+  border-radius: $radius;
+}
+
+@mixin input(){
+  background: #fff;
+  border: $defaultBorder;
+  padding: $defaultPadding/5 $defaultPadding/2;
+  font-size: 14px;
+  @include border-radius(3px);
+}
+
+@mixin button(){
+  background: $grayLight;
+  border: $defaultBorder;
+  padding: $defaultPadding/5 $defaultPadding/2;
+  font-size: 14px;
+  color: #fff;
+  @include border-radius(3px);
+}

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Repo List</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="build/main.css">
+    <script src="node_modules/lodash/lodash.js"></script>
+    <script src="./build/index.js"></script>
+  </head>
+  <body ng-app="repoList">
+    <header>
+    </header>
+
+    <div class="search-page" ng-controller="SearchController">
+      <div class="search-box">
+        <input class="search-input"
+          type="text" ng-model="user" ng-change="onValidate()" ng-keypress="onInputKeypress($event)"/>
+        <button class="search-button" ng-click="onRepoSearch(user);">Search</button>
+      </div>
+
+      <p class="search-error">{{error}}</p>
+      <div class="search-results" ng-if="!error && repos.length > 0">
+        <p>{{user}} has next repos: </p>
+        <ul>
+          <li ng-repeat="repo in repos">
+            <a href="{{repo.html_url}}" target="_blank" title="{{repo.full_name}}">{{repo.name}}</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <footer>
+    </footer>
+  </body>
+</html>

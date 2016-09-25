@@ -1,0 +1,39 @@
+@import "variables";
+@import "normalize";
+
+html {
+  height: 100vh;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.search-page {
+  flex: 1 0;
+  width: 1024px;
+  margin: 0 auto;
+  padding: 3*$defaultPadding $defaultPadding;
+  text-align: center;
+  border-left: $defaultBorder;
+  border-right: $defaultBorder;
+  align-content: stretch;
+}
+
+.search-input {
+  width: 80%;
+  @include input();
+}
+
+.search-button {
+  width: 10%;
+  @include button();
+}
+
+.search-results {
+  width: 92%;
+  margin: 0 auto;
+  text-align: left;
+}
